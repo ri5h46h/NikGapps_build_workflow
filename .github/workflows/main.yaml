@@ -1,0 +1,56 @@
+name: Build NikGapps Custom Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      ANDROID_VERSION:
+        description: "Target Android Version (eg: 10, 11, 12.1 etc.)"
+        required: true
+
+env:
+  TARGET_ANDROID_VERSION: ${{ github.event.inputs.ANDROID_VERSION }}
+  CONFIG: custom.config  # Use custom.config to build the Package
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+       - name: Checkouts
+         uses: actions/checkout@v2
+
+       - name: Cloning the Build Repo
+         run: |
+              git clone --depth=1 https://github.com/nikgapps/build.git
+
+       - name: Cloning the Config Repo
+         run: |
+              git clone --depth=1 https://github.com/nikgapps/config.git
+
+       - name: Install the Required Packages
+         working-directory: build
+         run: |
+              sudo apt update -y
+              sudo apt install aapt -y
+              sudo python3 -m pip install wheel setuptools testresources
+              sudo pip3 install -r requirements.txt
+
+       - name: Setup Configs according to the Target Android Version
+         run: |
+              cp ${CONFIG} config/${TARGET_ANDROID_VERSION}/custom.config
+              sed -i 's|TARGET_ANDROID_VERSION|#TARGET_ANDROID_VERSION|g' build/Config.py
+              printf "\nTARGET_ANDROID_VERSION = %s\n" "${TARGET_ANDROID_VERSION}" >> build/Config.py
+
+       - name: Build the Package
+         working-directory: build
+         run: |
+              python3 config_control.py ${TARGET_ANDROID_VERSION}
+              echo -e "\033[0;32m""### Build Completed Successfully!""\033[0m"
+
+       - name: Upload to WeTransfer
+         run: |
+              curl -sL https://git.io/file-transfer | bash
+              ls -al Releases/${TARGET_ANDROID_VERSION}/
+              ./transfer wet --silent Releases/${TARGET_ANDROID_VERSION}/NikGapps*.zip
+              rm Releases/${TARGET_ANDROID_VERSION}/NikGapps*.zip
+              ls -al Releases/${TARGET_ANDROID_VERSION}/
