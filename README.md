@@ -29,6 +29,5 @@ You can reach out to me on [Telegram Here](https://t.me/ri5h46h).
 ### Credits :
 • [Sushrut1101](https://github.com/Sushrut1101)
 
-• [Miyako Satori](https://github.com/mikubill)
-
+• [Miyako Satori](https://github.com/mikubill): for the [Transfer](https://github.com/Mikubill/transfer) tool.
 
