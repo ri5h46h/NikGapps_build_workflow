@@ -24,7 +24,7 @@ Workflow for building custom NikGapps Package using GitHub Actions.
 Feel free to make PRs for any changes you think this should have :)
 
 ### Contact
-You can reach out to me on [Telegram Here](https://t.me/ri5h46h).
+You can reach out to me on ![[Telegram](https://img.shields.io/badge/-telegram-red?color=white&logo=telegram&logoColor=black)](https://t.me/ri5h46h).
 
 ### Credits :
 • [Sushrut1101](https://github.com/Sushrut1101)
