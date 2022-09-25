@@ -31,3 +31,5 @@ You can reach out to me on [Telegram Here](https://t.me/ri5h46h).
 
 • [Miyako Satori](https://github.com/mikubill): for the [Transfer](https://github.com/Mikubill/transfer) tool.
 
+• [Nikhil Menghani](https://github.com/nikhilmenghani), the man himself for creating and maintaining such an awesome project
+
