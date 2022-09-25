@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       ANDROID_VERSION:
-        description: " Enter the Target Android Version (eg: 10, 11, 12.1 etc.)"
+        description: " Enter the Target Android Version (eg: 10, 11, 12.1, 13 etc.)"
         required: true
 
 env:
