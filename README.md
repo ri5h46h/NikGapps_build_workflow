@@ -2,7 +2,8 @@
 # ✨ Build your Custom [NikGapps](https://nikgapps.com/) Package ✨
 Workflow for building custom NikGapps Package using GitHub Actions.  
 
-![](![](https://raw.githubusercontent.com/nikgapps/nikgapps.github.io/master/images/nikgapps-logo.webp))
+
+![](https://raw.githubusercontent.com/ri5h46h/NikGapps_build_workflow/main/nikgapps_wf_banner.png)
 
 
 ## How to use this repoistory?
