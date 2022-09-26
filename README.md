@@ -24,6 +24,13 @@ Workflow for building custom NikGapps Package using GitHub Actions.
 ## Offcial Building Guide
 • [Offcial Guide](https://github.com/nikgapps/build)
 
+### Tests
+this workflow and the gapps created through it are tested by me on the devices
+
+vayu : A12.1,13.0
+
+mido : a13
+
 ### Contributing
 Feel free to make PRs for any changes you think this should have :)
 
