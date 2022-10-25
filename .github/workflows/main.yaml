@@ -44,12 +44,13 @@ jobs:
        - name: Build the Package
          working-directory: build
          run: |
-              python3 config_control.py --androidVersion ${TARGET_ANDROID_VERSION}
+              python3 config_control.py
               echo -e "\033[0;32m""### Build Completed Successfully!""\033[0m"
 
        - name: Upload to WeTransfer using transfer
          run: |
               curl -sL https://git.io/file-transfer | bash
+              ls -al Releases/
               ls -al Releases/${TARGET_ANDROID_VERSION}/
               ./transfer wet --silent Releases/${TARGET_ANDROID_VERSION}/NikGapps*.zip
               rm Releases/${TARGET_ANDROID_VERSION}/NikGapps*.zip
