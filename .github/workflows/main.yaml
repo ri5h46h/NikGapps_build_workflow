@@ -44,7 +44,7 @@ jobs:
        - name: Build the Package
          working-directory: build
          run: |
-              python3 config_control.py
+              python3 config_control.py --androidVersion ${TARGET_ANDROID_VERSION}
               echo -e "\033[0;32m""### Build Completed Successfully!""\033[0m"
 
        - name: Upload to WeTransfer using transfer
