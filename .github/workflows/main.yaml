@@ -52,6 +52,7 @@ jobs:
               curl -sL https://git.io/file-transfer | bash
               ls -al Releases/
               ls -al Releases/${TARGET_ANDROID_VERSION}/
+              sha256sum Releases/${TARGET_ANDROID_VERSION}/NikGapps*.zip
               ./transfer wet --silent Releases/${TARGET_ANDROID_VERSION}/NikGapps*.zip
               rm Releases/${TARGET_ANDROID_VERSION}/NikGapps*.zip
               ls -al Releases/${TARGET_ANDROID_VERSION}/
