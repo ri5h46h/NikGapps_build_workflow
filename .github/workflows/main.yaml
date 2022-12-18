@@ -21,7 +21,7 @@ jobs:
 
        - name: Cloning the Build Repo
          run: |
-              git clone --depth=1 https://github.com/nikgapps/build.git
+              git clone --depth=1 https://github.com/ri5h46h/build.git
 
        - name: Cloning the Config Repo
          run: |
